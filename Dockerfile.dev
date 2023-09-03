@@ -1,0 +1,22 @@
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
+
+# Working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the requirements file into the container
+COPY requirements.txt ./
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set environment variables for Flask (or your framework of choice)
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_ENV=development
+
+# Copy the current directory contents into the container
+COPY . .
+
+# Run your application
+CMD ["flask", "run"]
