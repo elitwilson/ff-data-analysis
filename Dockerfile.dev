@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Set environment variables for Flask (or your framework of choice)
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=6543
 ENV FLASK_ENV=development
 
 # Copy the current directory contents into the container
