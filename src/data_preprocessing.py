@@ -1,4 +1,4 @@
-from sklearn.datasets import load_diabetes
+from sklearn.datasets import load_diabetes # load the diabeetus example dataset
 from sklearn.model_selection import train_test_split
 
 
